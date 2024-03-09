@@ -1,0 +1,40 @@
+.searchForm {
+  width: 342px;
+  position: relative;
+  margin: 0 auto;
+  margin: 20px auto;
+}
+
+.searchForm input {
+  padding: 10px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  padding-right: 80px;
+}
+
+.searchForm input:focus {
+  outline: none;
+}
+
+.searchForm input[type="search"] {
+  width: 100%;
+}
+
+.searchForm button {
+  width: 70px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  height: 80%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchForm button:disabled {
+  background-color: #efefef;
+}
