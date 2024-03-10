@@ -1,7 +1,9 @@
 const api = import.meta.env.VITE_API_URL;
 
 export const searchUser = async (search: string) => {
-  const response = await fetch(`${api}/users/search?q=${search}`);
+  const response = await fetch(`${api}/users/search?q=${search}`, {
+    cache: "force-cache",
+  });
 
   if (!response.ok) throw new Error("Failed to fetch data");
 

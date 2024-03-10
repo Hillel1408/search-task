@@ -1,17 +1,17 @@
-import { IUser } from "../../types/global";
-import "./style.css";
+import styles from "./UserCard.module.css";
+import { UserCardProps } from "./UserCard.props";
 
-export function UserCard({ user }: { user: IUser }) {
+export function UserCard({ user }: UserCardProps) {
   return (
-    <div className="userCard">
+    <div className={styles.userCard}>
       <img
-        className="userPic"
+        className={styles.userPic}
         src={user.image}
         width="80px"
         height="80px"
         alt=""
       />
-      <div className="userInfo">
+      <div className={styles.userInfo}>
         <div>
           {user.firstName} {user.lastName}
         </div>

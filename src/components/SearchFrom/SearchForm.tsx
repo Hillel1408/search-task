@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { SearchContext } from "../../App";
+import { SearchContext } from "../../pages/Main/Main";
 import { Spinner } from "../../components";
-import "./styles.css";
+import styles from "./SearchForm.module.css";
 
 export function SearchForm() {
   const [value, setValue] = useState("");
@@ -23,7 +23,7 @@ export function SearchForm() {
   }, [value]);
 
   return (
-    <div className="searchForm">
+    <div className={styles.searchForm}>
       <input
         type="search"
         value={value}

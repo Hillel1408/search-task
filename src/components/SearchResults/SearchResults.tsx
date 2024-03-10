@@ -1,13 +1,12 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { SearchContext } from "../../App";
 import { UserCard } from "../../components";
-
-import "./style.css";
+import { SearchContext } from "../../pages/Main/Main";
+import styles from "./SearchResults.module.css";
 
 export function SearchResults() {
   const [page, setPage] = useState(0);
 
-  const { users } = useContext(SearchContext);
+  const { users, search } = useContext(SearchContext);
 
   const observerTarget = useRef(null);
 
@@ -33,10 +32,12 @@ export function SearchResults() {
   }, [observerTarget]);
 
   return (
-    <div className="usersList">
-      {users.slice(0, page * 9).map((user) => (
-        <UserCard key={user.id} user={user} />
-      ))}
+    <div className={styles.usersList}>
+      {search !== "" && users.length === 0
+        ? "Ничего не найдено"
+        : users
+            .slice(0, page * 9)
+            .map((user) => <UserCard key={user.id} user={user} />)}
       <div ref={observerTarget}></div>
     </div>
   );

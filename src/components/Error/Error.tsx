@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { SearchContext } from "../../App";
-import "./styles.css";
+import { SearchContext } from "../../pages/Main/Main";
+import styles from "./Error.module.css";
 
 export function Error() {
   const { error } = useContext(SearchContext);
 
-  return <p className="error">{error}</p>;
+  return <p className={styles.error}>{error}</p>;
 }
